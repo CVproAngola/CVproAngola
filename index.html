@@ -416,6 +416,97 @@ behavior:'smooth'
 }
 </script>
 
+
+<!-- INÍCIO: PAGAMENTOS CVPRO ANGOLA -->
+<section id="pagamentos-cvpro" style="max-width:850px;margin:35px auto;padding:24px;background:#101827;color:white;border-radius:14px;font-family:Arial,sans-serif;">
+  <h2 style="text-align:center;color:#d6ad55;">Serviços CVPro Angola</h2>
+  <p style="text-align:center;color:#cbd5e1;">Escolhe o serviço que pretendes adquirir.</p>
+
+  <div style="background:#263246;padding:16px;border-radius:10px;margin:15px 0;">
+    <h3>CV Profissional Premium</h3>
+    <p>1.500 Kz</p>
+    <button onclick="cvproPagar('CV Profissional Premium','1500 Kz')">Comprar</button>
+  </div>
+
+  <div style="background:#263246;padding:16px;border-radius:10px;margin:15px 0;">
+    <h3>Carta de Apresentação</h3>
+    <p>1.000 Kz</p>
+    <button onclick="cvproPagar('Carta de Apresentação','1000 Kz')">Comprar</button>
+  </div>
+
+  <div style="background:#263246;padding:16px;border-radius:10px;margin:15px 0;">
+    <h3>Pacote CV + Carta</h3>
+    <p>3.000 Kz</p>
+    <button onclick="cvproPagar('Pacote CV + Carta','3000 Kz')">Comprar</button>
+  </div>
+
+  <div style="background:#263246;padding:18px;border-radius:10px;margin-top:20px;">
+    <h3 style="color:#d6ad55;">Métodos de pagamento</h3>
+
+    <h4>Multicaixa Express</h4>
+    <p>Número associado: <strong>973 046 423</strong></p>
+
+    <h4>Transferência bancária</h4>
+    <p>Beneficiário: Fernando Victorino</p>
+    <p>IBAN: <strong id="cvproIban">0055000000422993610144</strong></p>
+
+    <button onclick="cvproCopiarIBAN()">Copiar IBAN</button>
+
+    <p style="font-size:13px;color:#cbd5e1;margin-top:18px;">
+      Depois de efetuares o pagamento, envia o comprovativo pelo WhatsApp.
+      O serviço será liberado após confirmação do recebimento.
+    </p>
+
+    <button onclick="cvproWhatsApp('Olá! Quero informações para pagar através do Multicaixa Express no CVPro Angola.')">
+      Instruções Multicaixa Express
+    </button>
+  </div>
+
+  <p style="text-align:center;margin-top:20px;">
+    <button onclick="cvproWhatsApp('Olá! Gostaria de saber mais sobre os serviços do CVPro Angola.')">
+      Falar com o atendimento
+    </button>
+  </p>
+</section>
+
+<style>
+#pagamentos-cvpro button {
+  background:#d6ad55;
+  color:#101827;
+  border:0;
+  border-radius:7px;
+  padding:12px 18px;
+  font-weight:bold;
+  cursor:pointer;
+  margin-top:8px;
+}
+#pagamentos-cvpro button:hover {
+  opacity:.85;
+}
+</style>
+
+<script>
+function cvproPagar(servico, preco) {
+  const mensagem = 'Olá! Quero comprar: ' + servico +
+    '. Preço: ' + preco +
+    '. Enviem-me as instruções de pagamento.';
+  cvproWhatsApp(mensagem);
+}
+
+function cvproWhatsApp(mensagem) {
+  const url = 'https://wa.me/244951928521?text=' +
+    encodeURIComponent(mensagem);
+  window.open(url, '_blank');
+}
+
+function cvproCopiarIBAN() {
+  const iban = '0055000000422993610144';
+  navigator.clipboard.writeText(iban)
+    .then(() => alert('IBAN copiado com sucesso!'))
+    .catch(() => alert('IBAN: ' + iban));
+}
+</script>
+<!-- FIM: PAGAMENTOS CVPRO ANGOLA -->
 </body>
   </html>
   
