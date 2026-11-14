@@ -1,5 +1,4 @@
 
-  
 <!DOCTYPE html>
 <html lang="pt">
 <head>
@@ -9,33 +8,149 @@
 <title>CVPro Angola | Currículos Profissionais</title>
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:Arial,sans-serif;background:#f1f4f9;color:#172033}
-header{background:#101827;color:white;padding:22px 16px;text-align:center}
-header h1{font-size:27px;color:#42b8ff}
-header p{font-size:13px;margin-top:7px;color:#cbd5e1}
-.container{max-width:850px;margin:25px auto;padding:15px}
-.card{background:white;padding:22px;border-radius:14px;margin-bottom:18px;box-shadow:0 3px 15px #0000000c}
-h2{font-size:19px;margin-bottom:18px;color:#14243b}
-h3{font-size:15px;margin:18px 0 10px}
-label{display:block;font-size:13px;font-weight:bold;margin:13px 0 6px}
-input,textarea,select{width:100%;padding:12px;border:1px solid #d5dce7;border-radius:8px;font-size:14px}
+:root {
+  --navy:#101827;
+  --blue:#172b49;
+  --gold:#d6ad55;
+  --light:#f3f5f8;
+  --text:#263246;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:var(--light);
+  color:var(--text);
+}
+header{
+  background:var(--navy);
+  color:white;
+  padding:24px 16px;
+  text-align:center;
+  border-bottom:4px solid var(--gold);
+}
+header h1{margin:0;font-size:27px}
+header h1 span{color:var(--gold)}
+header p{font-size:13px;color:#cbd5e1}
+.container{
+  max-width:950px;
+  margin:22px auto;
+  padding:12px;
+}
+.card{
+  background:white;
+  padding:20px;
+  margin-bottom:18px;
+  border-radius:12px;
+  box-shadow:0 3px 15px #0000000c;
+}
+h2{
+  color:var(--navy);
+  font-size:19px;
+  border-bottom:2px solid var(--gold);
+  padding-bottom:10px;
+}
+label{
+  display:block;
+  font-weight:bold;
+  font-size:13px;
+  margin:13px 0 6px;
+}
+input,textarea,select{
+  width:100%;
+  padding:12px;
+  border:1px solid #d7dce4;
+  border-radius:7px;
+  font-size:15px;
+  background:white;
+}
 textarea{min-height:85px;resize:vertical}
-button{border:0;border-radius:8px;padding:13px 17px;font-weight:bold;cursor:pointer}
-.primary{background:#087bd5;color:white;width:100%;margin-top:18px}
-.secondary{background:#e6f2ff;color:#087bd5;margin-top:12px}
-.remove{background:#ffe8e8;color:#bd2525;margin-top:10px}
-.actions{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.preview{background:white;padding:25px;border-radius:8px;line-height:1.6}
-.preview h1{color:#087bd5;font-size:25px}
-.preview h3{color:#087bd5;border-bottom:1px solid #ddd;padding-bottom:5px}
-.preview p{font-size:13px;white-space:pre-wrap}
-.small{font-size:12px;color:#64748b;margin-top:8px}
-footer{text-align:center;padding:25px;color:#64748b;font-size:12px}
+.grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+}
+button{
+  border:0;
+  padding:13px 16px;
+  border-radius:7px;
+  font-size:14px;
+  font-weight:bold;
+  cursor:pointer;
+}
+.primary{
+  background:var(--navy);
+  color:white;
+}
+.gold{
+  background:var(--gold);
+  color:#171717;
+}
+.secondary{
+  background:#e9edf3;
+  color:var(--navy);
+}
+.actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:9px;
+  margin-top:15px;
+}
+#preview{
+  background:white;
+  padding:28px;
+  border-radius:10px;
+  border-top:6px solid var(--gold);
+}
+.cv-header{
+  background:var(--navy);
+  color:white;
+  padding:25px;
+  display:flex;
+  gap:20px;
+  align-items:center;
+}
+.cv-header h1{margin:0;color:white}
+.cv-header p{color:var(--gold)}
+.cv-photo{
+  width:105px;
+  height:105px;
+  object-fit:cover;
+  border-radius:50%;
+  border:3px solid var(--gold);
+}
+.cv-section{margin-top:22px}
+.cv-section h3{
+  color:var(--navy);
+  border-bottom:2px solid var(--gold);
+  padding-bottom:7px;
+}
+.cv-section p{
+  white-space:pre-line;
+  line-height:1.6;
+}
+.small{font-size:12px;color:#64748b}
+.hidden{display:none}
+footer{
+  text-align:center;
+  padding:25px;
+  color:#64748b;
+  font-size:12px;
+}
+@media(max-width:600px){
+  .grid{grid-template-columns:1fr}
+  .card{padding:15px}
+  #preview{padding:12px}
+  .cv-header{padding:15px;gap:12px}
+  .cv-photo{width:75px;height:75px}
+  .cv-header h1{font-size:19px}
+}
 @media print{
-body{background:white}
-header,.container,.no-print,footer{display:none!important}
-#resumePreview{display:block!important;box-shadow:none;padding:20px}
+  body{background:white}
+  header,.form-area,.actions,footer,.preview-title{display:none!important}
+  .container{margin:0;padding:0;max-width:none}
+  #preview{box-shadow:none;border-radius:0;padding:15mm}
+  @page{size:A4;margin:0}
 }
 </style>
 </head>
@@ -43,138 +158,264 @@ header,.container,.no-print,footer{display:none!important}
 <body>
 
 <header>
-<h1>CVPro Angola</h1>
-<p>O teu talento merece um currículo profissional.</p>
+  <h1>CV<span>PRO</span> ANGOLA</h1>
+  <p>O teu talento merece um currículo profissional.</p>
 </header>
 
-<main class="container">
+<div class="container">
+
+<div class="form-area">
 
 <div class="card">
-<h2>Cria o teu currículo</h2>
-<p class="small">Preenche os campos abaixo para gerar o teu currículo profissional.</p>
-
-<h3>1. Dados pessoais</h3>
+<h2>01. Dados pessoais</h2>
 
 <label>Nome completo</label>
-<input id="nome" placeholder="Ex: João Manuel">
+<input id="nome" placeholder="O teu nome completo">
 
-<label>Profissão ou cargo pretendido</label>
-<input id="cargo" placeholder="Ex: Técnico de Informática">
+<label>Profissão ou área profissional</label>
+<input id="profissao" placeholder="Ex.: Técnico de Informática">
 
+<div class="grid">
+<div>
 <label>Telefone</label>
 <input id="telefone" placeholder="+244 9XX XXX XXX">
-
+</div>
+<div>
 <label>Email</label>
 <input id="email" type="email" placeholder="teuemail@gmail.com">
+</div>
+</div>
 
 <label>Localização</label>
-<input id="local" placeholder="Ex: Luanda, Angola">
+<input id="local" placeholder="Ex.: Luanda, Angola">
 
-<label>Resumo profissional</label>
-<textarea id="resumo" placeholder="Apresenta brevemente a tua experiência e competências..."></textarea>
+<label>Fotografia profissional</label>
+<input id="foto" type="file" accept="image/*">
 
-<h3>2. Formação académica</h3>
-<label>Formação</label>
-<input id="formacao" placeholder="Ex: Ensino Médio Técnico">
-
-<label>Instituição</label>
-<input id="instituicao" placeholder="Nome da instituição">
-
-<label>Ano de conclusão</label>
-<input id="ano" placeholder="Ex: 2024">
-
-<h3>3. Experiência profissional</h3>
-<label>Experiência e funções desempenhadas</label>
-<textarea id="experiencia" placeholder="Empresa, cargo, período e responsabilidades..."></textarea>
-
-<h3>4. Competências</h3>
-<label>Competências profissionais</label>
-<textarea id="competencias" placeholder="Ex: Informática, comunicação, eletricidade..."></textarea>
-
-<h3>5. Idiomas</h3>
-<label>Idiomas e níveis</label>
-<textarea id="idiomas" placeholder="Ex: Português - Fluente; Inglês - Básico"></textarea>
-
-<button class="primary" onclick="gerarCV()">GERAR MEU CURRÍCULO</button>
 </div>
 
 <div class="card">
-<h2>Pré-visualização</h2>
-<div id="resumePreview" class="preview">
-<p>O teu currículo aparecerá aqui depois de preencheres os dados.</p>
+<h2>02. Perfil profissional</h2>
+<label>Resumo profissional</label>
+<textarea id="perfil" placeholder="Apresenta a tua experiência, capacidades e objetivos profissionais."></textarea>
+
+<button class="gold" onclick="sugerir('perfil')">
+Melhorar texto profissional
+</button>
+<p class="small">Assistente de escrita local: cria sugestões sem consumir créditos.</p>
 </div>
 
-<div class="actions no-print">
-<button class="secondary" onclick="window.print()">Descarregar PDF</button>
-<button class="secondary" onclick="copiarCV()">Copiar texto</button>
+<div class="card">
+<h2>03. Experiência profissional</h2>
+<label>Empresa ou organização</label>
+<input id="empresa" placeholder="Nome da empresa">
+
+<label>Cargo desempenhado</label>
+<input id="cargo" placeholder="Ex.: Técnico de eletricidade">
+
+<div class="grid">
+<div>
+<label>Data de início</label>
+<input id="inicio" placeholder="Ex.: 2022">
 </div>
-<p class="small no-print">Para guardar em PDF, escolhe "Guardar como PDF" na janela de impressão.</p>
+<div>
+<label>Data de término</label>
+<input id="fim" placeholder="Ex.: 2025 ou Atual">
+</div>
 </div>
 
-</main>
+<label>Responsabilidades e realizações</label>
+<textarea id="experiencia" placeholder="Descreve as atividades que realizaste."></textarea>
+
+<button class="gold" onclick="sugerir('experiencia')">
+Melhorar descrição
+</button>
+</div>
+
+<div class="card">
+<h2>04. Formação académica</h2>
+<label>Instituição de ensino</label>
+<input id="instituicao" placeholder="Nome da instituição">
+
+<label>Curso ou qualificação</label>
+<input id="curso" placeholder="Ex.: Ensino Técnico Profissional">
+
+<div class="grid">
+<div>
+<label>Ano de início</label>
+<input id="anoInicio" placeholder="2020">
+</div>
+<div>
+<label>Ano de conclusão</label>
+<input id="anoFim" placeholder="2023">
+</div>
+</div>
+</div>
+
+<div class="card">
+<h2>05. Competências e idiomas</h2>
+
+<label>Competências profissionais</label>
+<textarea id="competencias" placeholder="Ex.: Informática, comunicação, eletricidade, liderança..."></textarea>
+
+<button class="gold" onclick="sugerir('competencias')">
+Sugerir competências
+</button>
+
+<label>Idiomas</label>
+<textarea id="idiomas" placeholder="Ex.: Português – Fluente; Inglês – Básico"></textarea>
+</div>
+
+<div class="card">
+<h2>06. Objetivo profissional</h2>
+<textarea id="objetivo" placeholder="Que oportunidade profissional procuras?"></textarea>
+<button class="gold" onclick="sugerir('objetivo')">
+Melhorar objetivo
+</button>
+</div>
+
+<div class="card">
+<h2>07. Criar currículo</h2>
+<p>Preenche os teus dados e gera o teu currículo profissional.</p>
+<button class="primary" style="width:100%" onclick="gerarCV()">
+GERAR MEU CURRÍCULO
+</button>
+</div>
+
+</div>
+
+<h2 class="preview-title">Pré-visualização do currículo</h2>
+
+<div id="preview">
+<p>O teu currículo aparecerá aqui depois de clicares em GERAR MEU CURRÍCULO.</p>
+</div>
+
+<div class="actions">
+<button class="gold" onclick="window.print()">GUARDAR EM PDF</button>
+<button class="secondary" onclick="gerarCV()">ATUALIZAR</button>
+</div>
+
+</div>
 
 <footer>
-© 2026 CVPro Angola. Todos os direitos reservados.
+CVPro Angola © 2026 — Currículos profissionais e empregabilidade.
 </footer>
 
 <script>
+const campos=[
+'nome','profissao','telefone','email','local','perfil',
+'empresa','cargo','inicio','fim','experiencia',
+'instituicao','curso','anoInicio','anoFim',
+'competencias','idiomas','objetivo'
+];
+
+let fotografia='';
+
+document.getElementById('foto').addEventListener('change',function(e){
+const file=e.target.files[0];
+if(!file)return;
+if(!file.type.startsWith('image/')){
+alert('Seleciona uma imagem válida.');
+return;
+}
+if(file.size>3*1024*1024){
+alert('A fotografia deve ter menos de 3 MB.');
+this.value='';
+return;
+}
+const reader=new FileReader();
+reader.onload=ev=>fotografia=ev.target.result;
+reader.readAsDataURL(file);
+});
+
 function valor(id){
 return document.getElementById(id).value.trim();
 }
 
-function escapar(texto){
-return texto.replace(/[&<>"']/g,function(c){
-return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
-});
+function seguro(texto){
+return String(texto||'').replace(/[&<>"']/g,c=>({
+'&':'&amp;','<':'&lt;','>':'&gt;',
+'"':'&quot;',"'":'&#39;'
+}[c]));
+}
+
+function sugerir(id){
+const texto=valor(id);
+let resultado='';
+
+if(id==='perfil'){
+resultado=texto
+? 'Profissional com experiência e interesse em desenvolver competências na área de '+valor('profissao')+'. '+texto
+: 'Profissional motivado, responsável e comprometido com a qualidade do trabalho, com interesse em desenvolver competências e contribuir para os objetivos da organização.';
+}
+if(id==='experiencia'){
+resultado=texto
+? 'Responsável pela execução das seguintes atividades: '+texto+'. Foco na qualidade, organização e cumprimento das responsabilidades profissionais.'
+: 'Executar atividades da função com responsabilidade, organização, atenção à qualidade e cumprimento dos objetivos definidos.';
+}
+if(id==='competencias'){
+resultado=texto
+? texto+', comunicação, organização, trabalho em equipa e resolução de problemas.'
+: 'Comunicação, trabalho em equipa, organização, responsabilidade e resolução de problemas.';
+}
+if(id==='objetivo'){
+resultado=texto
+? 'Procuro uma oportunidade profissional que me permita aplicar e desenvolver as minhas competências. '+texto
+: 'Integrar uma organização onde possa aplicar os meus conhecimentos, desenvolver competências e contribuir para o crescimento da equipa.';
+}
+
+document.getElementById(id).value=resultado;
 }
 
 function gerarCV(){
 const nome=valor('nome');
-const cargo=valor('cargo');
+const profissao=valor('profissao');
 
-if(!nome || !cargo){
+if(!nome||!profissao){
 alert('Preenche pelo menos o nome e a profissão.');
 return;
 }
 
-const campos=[
-['Resumo profissional','resumo'],
-['Formação académica','formacao'],
-['Instituição','instituicao'],
-['Ano de conclusão','ano'],
-['Experiência profissional','experiencia'],
-['Competências','competencias'],
-['Idiomas','idiomas']
-];
+const secao=(titulo,conteudo)=>conteudo?
+`<div class="cv-section"><h3>${titulo}</h3><p>${seguro(conteudo)}</p></div>`:'';
 
-let html=`<h1>${escapar(nome)}</h1>
-<h3>${escapar(cargo)}</h3>
-<p>${escapar(valor('telefone'))} | ${escapar(valor('email'))}</p>
-<p>${escapar(valor('local'))}</p>`;
+const experiencia=[
+valor('cargo'),
+valor('empresa'),
+valor('inicio')||valor('fim')
+].filter(Boolean).join(' | ');
 
-campos.forEach(([titulo,id])=>{
-const conteudo=valor(id);
-if(conteudo){
-html+=`<h3>${titulo}</h3><p>${escapar(conteudo)}</p>`;
-}
+const formacao=[
+valor('curso'),
+valor('instituicao'),
+valor('anoInicio')||valor('anoFim')
+].filter(Boolean).join(' | ');
+
+document.getElementById('preview').innerHTML=`
+<div class="cv-header">
+${fotografia?`<img class="cv-photo" src="${fotografia}">`:''}
+<div>
+<h1>${seguro(nome)}</h1>
+<p>${seguro(profissao)}</p>
+<div>${seguro(valor('telefone'))} | ${seguro(valor('email'))}</div>
+<div>${seguro(valor('local'))}</div>
+</div>
+</div>
+
+${secao('PERFIL PROFISSIONAL',valor('perfil'))}
+${secao('EXPERIÊNCIA PROFISSIONAL',experiencia+'\n'+valor('experiencia'))}
+${secao('FORMAÇÃO ACADÉMICA',formacao)}
+${secao('COMPETÊNCIAS',valor('competencias'))}
+${secao('IDIOMAS',valor('idiomas'))}
+${secao('OBJETIVO PROFISSIONAL',valor('objetivo'))}
+`;
+
+document.getElementById('preview').scrollIntoView({
+behavior:'smooth'
 });
-
-document.getElementById('resumePreview').innerHTML=html;
-}
-
-function copiarCV(){
-const texto=document.getElementById('resumePreview').innerText;
-if(texto.includes('aparecerá aqui')){
-alert('Gera primeiro o teu currículo.');
-return;
-}
-if(navigator.clipboard){
-navigator.clipboard.writeText(texto)
-.then(()=>alert('Currículo copiado!'))
-.catch(()=>alert('Não foi possível copiar.'));
-}
 }
 </script>
 
 </body>
-</html>
+  </html>
+  
