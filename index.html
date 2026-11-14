@@ -1,152 +1,41 @@
 
+  
 <!DOCTYPE html>
 <html lang="pt">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CVPro Angola | Cria o teu currículo</title>
+<meta name="theme-color" content="#101827">
+<title>CVPro Angola | Currículos Profissionais</title>
 
 <style>
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: Arial, sans-serif;
-  background: #f1f5f9;
-  color: #172554;
-}
-
-header {
-  background: #102b50;
-  color: white;
-  padding: 25px 18px;
-  text-align: center;
-}
-
-header h1 {
-  font-size: 27px;
-  margin-bottom: 8px;
-}
-
-header p {
-  color: #cbd5e1;
-  font-size: 14px;
-}
-
-.container {
-  max-width: 950px;
-  margin: 25px auto;
-  padding: 15px;
-}
-
-.card {
-  background: white;
-  padding: 22px;
-  border-radius: 12px;
-  margin-bottom: 20px;
-  box-shadow: 0 3px 12px #0000000d;
-}
-
-h2 {
-  color: #102b50;
-  margin-bottom: 18px;
-  font-size: 20px;
-}
-
-h3 {
-  color: #1673c5;
-  margin: 20px 0 12px;
-}
-
-label {
-  display: block;
-  font-weight: bold;
-  margin: 13px 0 6px;
-  font-size: 14px;
-}
-
-input, textarea {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #cbd5e1;
-  border-radius: 7px;
-  font-size: 15px;
-  font-family: inherit;
-}
-
-textarea {
-  resize: vertical;
-  min-height: 85px;
-}
-
-button {
-  background: #1673c5;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  padding: 14px 20px;
-  font-size: 15px;
-  font-weight: bold;
-  cursor: pointer;
-  margin-top: 15px;
-  width: 100%;
-}
-
-button:hover {
-  background: #105a9e;
-}
-
-.preview {
-  background: white;
-  padding: 28px;
-  border-top: 7px solid #1673c5;
-  color: #263445;
-  line-height: 1.6;
-}
-
-.preview h1 {
-  color: #102b50;
-  font-size: 27px;
-}
-
-.preview h3 {
-  border-bottom: 1px solid #cbd5e1;
-  padding-bottom: 5px;
-}
-
-.preview p {
-  margin: 5px 0;
-  overflow-wrap: anywhere;
-}
-
-footer {
-  text-align: center;
-  padding: 25px;
-  color: #64748b;
-  font-size: 13px;
-}
-
-@media print {
-  body {
-    background: white;
-  }
-  header, .form-area, footer, .no-print {
-    display: none !important;
-  }
-  .container {
-    margin: 0;
-    padding: 0;
-  }
-  .card {
-    box-shadow: none;
-    padding: 0;
-  }
-  .preview {
-    border-top: 5px solid #1673c5;
-  }
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,sans-serif;background:#f1f4f9;color:#172033}
+header{background:#101827;color:white;padding:22px 16px;text-align:center}
+header h1{font-size:27px;color:#42b8ff}
+header p{font-size:13px;margin-top:7px;color:#cbd5e1}
+.container{max-width:850px;margin:25px auto;padding:15px}
+.card{background:white;padding:22px;border-radius:14px;margin-bottom:18px;box-shadow:0 3px 15px #0000000c}
+h2{font-size:19px;margin-bottom:18px;color:#14243b}
+h3{font-size:15px;margin:18px 0 10px}
+label{display:block;font-size:13px;font-weight:bold;margin:13px 0 6px}
+input,textarea,select{width:100%;padding:12px;border:1px solid #d5dce7;border-radius:8px;font-size:14px}
+textarea{min-height:85px;resize:vertical}
+button{border:0;border-radius:8px;padding:13px 17px;font-weight:bold;cursor:pointer}
+.primary{background:#087bd5;color:white;width:100%;margin-top:18px}
+.secondary{background:#e6f2ff;color:#087bd5;margin-top:12px}
+.remove{background:#ffe8e8;color:#bd2525;margin-top:10px}
+.actions{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.preview{background:white;padding:25px;border-radius:8px;line-height:1.6}
+.preview h1{color:#087bd5;font-size:25px}
+.preview h3{color:#087bd5;border-bottom:1px solid #ddd;padding-bottom:5px}
+.preview p{font-size:13px;white-space:pre-wrap}
+.small{font-size:12px;color:#64748b;margin-top:8px}
+footer{text-align:center;padding:25px;color:#64748b;font-size:12px}
+@media print{
+body{background:white}
+header,.container,.no-print,footer{display:none!important}
+#resumePreview{display:block!important;box-shadow:none;padding:20px}
 }
 </style>
 </head>
@@ -154,129 +43,138 @@ footer {
 <body>
 
 <header>
-  <h1>CVPro Angola</h1>
-  <p>O teu talento merece um currículo profissional.</p>
+<h1>CVPro Angola</h1>
+<p>O teu talento merece um currículo profissional.</p>
 </header>
 
-<div class="container">
+<main class="container">
 
-<div class="card form-area">
-<h2>Cria o teu currículo profissional</h2>
-<p>Preenche os campos abaixo para começar.</p>
+<div class="card">
+<h2>Cria o teu currículo</h2>
+<p class="small">Preenche os campos abaixo para gerar o teu currículo profissional.</p>
 
 <h3>1. Dados pessoais</h3>
 
 <label>Nome completo</label>
-<input id="nome" placeholder="O teu nome completo">
+<input id="nome" placeholder="Ex: João Manuel">
 
-<label>Profissão</label>
-<input id="profissao" placeholder="Ex: Técnico de Informática">
+<label>Profissão ou cargo pretendido</label>
+<input id="cargo" placeholder="Ex: Técnico de Informática">
 
 <label>Telefone</label>
-<input id="telefone" placeholder="+244 900 000 000">
+<input id="telefone" placeholder="+244 9XX XXX XXX">
 
 <label>Email</label>
-<input id="email" placeholder="teuemail@email.com">
+<input id="email" type="email" placeholder="teuemail@gmail.com">
 
 <label>Localização</label>
 <input id="local" placeholder="Ex: Luanda, Angola">
 
-<h3>2. Perfil profissional</h3>
-<label>Apresentação profissional</label>
-<textarea id="perfil" placeholder="Fala brevemente sobre ti e as tuas competências..."></textarea>
+<label>Resumo profissional</label>
+<textarea id="resumo" placeholder="Apresenta brevemente a tua experiência e competências..."></textarea>
+
+<h3>2. Formação académica</h3>
+<label>Formação</label>
+<input id="formacao" placeholder="Ex: Ensino Médio Técnico">
+
+<label>Instituição</label>
+<input id="instituicao" placeholder="Nome da instituição">
+
+<label>Ano de conclusão</label>
+<input id="ano" placeholder="Ex: 2024">
 
 <h3>3. Experiência profissional</h3>
-<label>Experiência de trabalho</label>
-<textarea id="experiencia" placeholder="Empresa, função, período e principais responsabilidades..."></textarea>
+<label>Experiência e funções desempenhadas</label>
+<textarea id="experiencia" placeholder="Empresa, cargo, período e responsabilidades..."></textarea>
 
-<h3>4. Formação académica</h3>
-<label>Formação</label>
-<textarea id="formacao" placeholder="Curso, instituição e ano de conclusão..."></textarea>
+<h3>4. Competências</h3>
+<label>Competências profissionais</label>
+<textarea id="competencias" placeholder="Ex: Informática, comunicação, eletricidade..."></textarea>
 
-<h3>5. Competências</h3>
-<label>As tuas competências</label>
-<textarea id="competencias" placeholder="Ex: Comunicação, liderança, informática..."></textarea>
+<h3>5. Idiomas</h3>
+<label>Idiomas e níveis</label>
+<textarea id="idiomas" placeholder="Ex: Português - Fluente; Inglês - Básico"></textarea>
 
-<h3>6. Idiomas</h3>
-<label>Línguas que dominas</label>
-<textarea id="idiomas" placeholder="Ex: Português, Inglês..."></textarea>
-
-<button onclick="gerarCV()">Gerar currículo</button>
+<button class="primary" onclick="gerarCV()">GERAR MEU CURRÍCULO</button>
 </div>
 
 <div class="card">
-<h2>Pré-visualização do currículo</h2>
-
-<div class="preview" id="curriculo">
-<h1>O teu nome aparecerá aqui</h1>
-<p>Preenche os campos para visualizar o teu currículo.</p>
+<h2>Pré-visualização</h2>
+<div id="resumePreview" class="preview">
+<p>O teu currículo aparecerá aqui depois de preencheres os dados.</p>
 </div>
 
-<button class="no-print" onclick="window.print()">
-Descarregar / Guardar em PDF
-</button>
+<div class="actions no-print">
+<button class="secondary" onclick="window.print()">Descarregar PDF</button>
+<button class="secondary" onclick="copiarCV()">Copiar texto</button>
+</div>
+<p class="small no-print">Para guardar em PDF, escolhe "Guardar como PDF" na janela de impressão.</p>
 </div>
 
-</div>
+</main>
 
 <footer>
-© 2026 CVPro Angola — Plataforma de currículos profissionais.
+© 2026 CVPro Angola. Todos os direitos reservados.
 </footer>
 
 <script>
-function valor(id) {
-  return document.getElementById(id).value.trim();
+function valor(id){
+return document.getElementById(id).value.trim();
 }
 
-function escapar(texto) {
-  return texto.replace(/[&<>"']/g, function(c) {
-    return {
-      "&": "&amp;",
-      "<": "&lt;",
-      ">": "&gt;",
-      '"': "&quot;",
-      "'": "&#39;"
-    }[c];
-  });
+function escapar(texto){
+return texto.replace(/[&<>"']/g,function(c){
+return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+});
 }
 
-function gerarCV() {
-  const nome = valor("nome") || "Nome completo";
-  const profissao = valor("profissao");
-  const telefone = valor("telefone");
-  const email = valor("email");
-  const local = valor("local");
-  const perfil = valor("perfil");
-  const experiencia = valor("experiencia");
-  const formacao = valor("formacao");
-  const competencias = valor("competencias");
-  const idiomas = valor("idiomas");
+function gerarCV(){
+const nome=valor('nome');
+const cargo=valor('cargo');
 
-  document.getElementById("curriculo").innerHTML = `
-    <h1>${escapar(nome)}</h1>
-    <h3>${escapar(profissao)}</h3>
+if(!nome || !cargo){
+alert('Preenche pelo menos o nome e a profissão.');
+return;
+}
 
-    <p>${escapar(telefone)} | ${escapar(email)}</p>
-    <p>${escapar(local)}</p>
+const campos=[
+['Resumo profissional','resumo'],
+['Formação académica','formacao'],
+['Instituição','instituicao'],
+['Ano de conclusão','ano'],
+['Experiência profissional','experiencia'],
+['Competências','competencias'],
+['Idiomas','idiomas']
+];
 
-    <h3>PERFIL PROFISSIONAL</h3>
-    <p>${escapar(perfil) || "Não informado."}</p>
+let html=`<h1>${escapar(nome)}</h1>
+<h3>${escapar(cargo)}</h3>
+<p>${escapar(valor('telefone'))} | ${escapar(valor('email'))}</p>
+<p>${escapar(valor('local'))}</p>`;
 
-    <h3>EXPERIÊNCIA PROFISSIONAL</h3>
-    <p>${escapar(experiencia) || "Não informado."}</p>
+campos.forEach(([titulo,id])=>{
+const conteudo=valor(id);
+if(conteudo){
+html+=`<h3>${titulo}</h3><p>${escapar(conteudo)}</p>`;
+}
+});
 
-    <h3>FORMAÇÃO ACADÉMICA</h3>
-    <p>${escapar(formacao) || "Não informado."}</p>
+document.getElementById('resumePreview').innerHTML=html;
+}
 
-    <h3>COMPETÊNCIAS</h3>
-    <p>${escapar(competencias) || "Não informado."}</p>
-
-    <h3>IDIOMAS</h3>
-    <p>${escapar(idiomas) || "Não informado."}</p>
-  `;
+function copiarCV(){
+const texto=document.getElementById('resumePreview').innerText;
+if(texto.includes('aparecerá aqui')){
+alert('Gera primeiro o teu currículo.');
+return;
+}
+if(navigator.clipboard){
+navigator.clipboard.writeText(texto)
+.then(()=>alert('Currículo copiado!'))
+.catch(()=>alert('Não foi possível copiar.'));
+}
 }
 </script>
 
 </body>
-  </html>
-  
+</html>
